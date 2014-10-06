@@ -1,0 +1,41 @@
+<%= form_for(@user) do |f| %>
+    <% if @user.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@user.errors.count, "error") %> prohibited this state from being saved:</h2>
+
+          <ul>
+            <% @user.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+    <div class="field">
+      <%= f.text_field :name, placeholder: 'Seu nome' %>
+    </div>
+    <div class="field">
+      <%= f.text_field :email, placeholder: 'Email' %>
+    </div>
+    <div class="field">
+      <%= f.password_field :password, placeholder: 'Senha' %>
+      <%= f.password_field :password_confirmation, placeholder:'Confirme-a' %>
+    </div>
+    <div class="field">
+      <%= f.file_field :picture %>
+    </div>
+    <div class="field">
+      <%= f.label :birth_date %>
+      <br>
+      <%= f.date_field :birth_date %>
+    </div>
+    <div class="field">
+      <%= f.text_area :bio,
+                      width: '300', height: '200',
+                      placeholder: 'Conte um pouco sobre sua vida com coleções, ou deixe em branco'
+      %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+<% end %>

@@ -1,0 +1,8 @@
+<div class="logo-title">Cerveja Coleções</div>
+
+<div class="menu">
+  <%= link_to 'Categorias', categories_path %>
+  <%= link_to 'Teste', categories_path %>
+  <%=  %>
+  <%= logged? ? logged.name : (link_to 'Log in', new_user_session_path) %>
+</div>
