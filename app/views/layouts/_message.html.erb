@@ -1,0 +1,6 @@
+<% if notice.present? || alert.present? %>
+    <div id="message" class="message <%= notice.present? ? 'notice' : 'alert' %>">
+      <%= notice %>
+      <%= alert %>
+    </div>
+<% end %>

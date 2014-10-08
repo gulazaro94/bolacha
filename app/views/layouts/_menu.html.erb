@@ -3,6 +3,9 @@
 <div class="menu">
   <%= link_to 'Categorias', categories_path %>
   <%= link_to 'Teste', categories_path %>
-  <%=  %>
-  <%= logged? ? logged.name : (link_to 'Log in', new_user_session_path) %>
+  <% if logged? %>
+      <%= link_to logged.name, user_sessions_path, method: :delete %>
+  <% else %>
+      <%= link_to 'Log in', new_user_session_path %>
+  <% end %>
 </div>

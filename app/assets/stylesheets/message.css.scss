@@ -1,0 +1,21 @@
+@import "shadow";
+
+div.message {
+  position: fixed;
+  right: 10px;
+  top: 100px;
+  opacity: 0.75;
+  font-size: 30px;
+  color: #ffffff;
+  padding: 10px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  @include shadow(#171517, 0px, 5px, 10px);
+}
+div.notice {
+  background-image: linear-gradient(to bottom, #0c4f19, #118e2d);
+}
+div.alert {
+  background-image: linear-gradient(to bottom, #460000, #730000);
+}

@@ -10,14 +10,19 @@ class UserSessionsController < ApplicationController
 
     user_session_params = params.require(:user_session).permit(:email, :password)
     @session = UserSession.new(session, user_session_params)
-    if @session.authenticate!
-      redirect_to logged
+    val = @session.authenticate!
+    if val == nil
+      redirect_to root_path, alert: 'Confirme seu email'
+    elsif val
+      redirect_to logged, notice: 'Logado'
     else
-      redirect_to root_path
+      redirect_to root_path, alert: 'Email e/ou senha incorreto(s)'
     end
   end
 
   def destroy
-
+    user_session = UserSession.new(session)
+    user_session.destroy
+    redirect_to root_path
   end
 end

@@ -4,10 +4,12 @@ Rails.application.routes.draw do
 
   resources :users, except: [:index]
 
-  resources :user_sessions, only: [:new, :create, :destroy]
+  resources :user_sessions, only: [:new, :create]
+
+  delete '/user_sessions', to: 'user_sessions#destroy'
 
   get '/user_confirmation', to: 'useful#user_confirmation'
 
-  root 'useful#index'
+  root 'users#index'
 
 end

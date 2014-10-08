@@ -10,10 +10,14 @@ class UserSession
   end
 
   def authenticate!
-    user = User.find_by(email: @email, password: @password, token: '')
+    user = User.find_by(email: @email, password: @password)
     if user
-      store(user)
-      true
+      if user.token == ''
+        store(user)
+        true
+      else
+        nil
+      end
     else
       false
     end
@@ -29,5 +33,9 @@ class UserSession
 
   def logged
     User.find(@session[:user_id])
+  end
+
+  def destroy
+    @session[:user_id] = nil
   end
 end
