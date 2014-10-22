@@ -18,7 +18,7 @@ class User < ActiveRecord::Base
     if user
       user.token = ''
       user.save!
-      store user, session
+      UserSession.new(session).store(user, session)
     else
       false
     end
