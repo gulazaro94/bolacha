@@ -8,7 +8,7 @@ class UsefulController < ApplicationController
     if User.confirm!(token, session)
       redirect_to root_path, notice: 'Cadastro confirmado com sucesso!'
     else
-      redirect_to root_path, notice: 'Token inválido ou cadastro já realizado'
+      redirect_to root_path, alert: 'Token inválido!'
     end
   end
 end
