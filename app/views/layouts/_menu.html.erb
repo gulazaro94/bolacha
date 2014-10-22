@@ -1,5 +1,6 @@
 <div class="menu">
   <ul class="menu-list">
+    <li><%= link_to 'Items', items_path %></li>
     <% if logged? %>
         <% if logged.admin %>
             <li>
@@ -13,9 +14,8 @@
         <% end %>
         <li><%= link_to logged.name, user_sessions_path, method: :delete %></li>
     <% else %>
-        <li><%= link_to 'Cadastre-se', new_user_path %></li>
-        <li><%= link_to 'Items', items_path %></li>
         <li><%= link_to 'Log in', new_user_session_path %></li>
-    <% end %>
+        <li><%= link_to 'Cadastre-se', new_user_path %></li>
+  <% end %>
   </ul>
 </div>
