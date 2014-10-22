@@ -3,18 +3,19 @@
 <head>
   <title>Colecoes</title>
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 <div class="all">
-  <%= render 'layouts/message' %>
   <div class="header">
+    <div class="logo-title">Cerveja Coleções</div>
     <%= render 'layouts/menu' %>
   </div>
   <div class="content">
+    <%= render 'layouts/message' %>
     <%= yield %>
   </div>
 </div>
+<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 </body>
 </html>

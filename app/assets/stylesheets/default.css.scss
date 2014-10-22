@@ -5,10 +5,10 @@ div.all {
 }
 
 div.content {
-  width: 60%;
+  width: 64%;
   margin: 0 auto;
   background: rgba(0,0,0,0.3);
-  padding: 5%;
+  padding: 0px 5% 5% 5%;
   min-width: 420px;
 }
 
@@ -25,18 +25,19 @@ div.header {
   opacity: 0.85;
   line-height: 70px;
   min-width: 460px;
+  padding-right: 13%;
+  padding-left: 13%;
 }
 
-div.menu {
-  display: inline-block;
-  float: right;
-  margin-right: 15%;
-  vertical-align: middle;
-  a {
-    padding: 0 5px;
-    background: inherit;
-    margin-left: 5px;
-  }
+
+div.center {
+  text-align: center;
+}
+
+div.clear{
+  clear: both;
+  height: 0;
+  width: 0;
 }
 
 html, body {
@@ -44,6 +45,7 @@ html, body {
   height: 70%;
   min-height: 100%;
   background-image: url("/images/desfocada5.jpg");
+  min-width: 600px;
 }
 
 * {
@@ -51,7 +53,7 @@ html, body {
   margin: 0;
 }
 
-input, textarea {
+input, textarea, select {
   -moz-border-radius: 10px;
   border-radius: 10px;
   font-size: 22px;
@@ -75,7 +77,7 @@ a, input[type=submit] {
   color: #9a9a9a;
   font-family:Arial;
   font-size:18px;
-  padding: 10px 10px;
+  padding: 10px 25px;
   text-decoration:none;
   text-align:center;
   cursor: pointer;
@@ -88,7 +90,6 @@ div.logo-title {
   color: white;
   font-size: 40px;
   vertical-align: middle;
-  margin-left: 15%;
   display: inline-block;
 }
 
@@ -99,3 +100,10 @@ div.right {
 div.line {
   display: inline-block;
 }
+
+div.title {
+  font-size: 50px;
+  color: lightgray;
+  text-shadow: 0 0 7px black;
+}
+

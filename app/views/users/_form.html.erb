@@ -13,19 +13,20 @@
     <div class="field">
       <%= f.text_field :name, placeholder: 'Seu nome' %>
     </div>
+    <% unless @user.id %>
     <div class="field">
       <%= f.text_field :email, placeholder: 'Email' %>
     </div>
+        <div class="field">
+          <%= f.password_field :password, placeholder: 'Senha' %>
+          <%= f.password_field :password_confirmation, placeholder: 'Confirme-a' %>
+        </div>
+    <% end %>
     <div class="field">
-      <%= f.password_field :password, placeholder: 'Senha' %>
-      <%= f.password_field :password_confirmation, placeholder:'Confirme-a' %>
-    </div>
-    <div class="field">
+      Sua foto <br/>
       <%= f.file_field :picture %>
     </div>
     <div class="field">
-      <%= f.label :birth_date %>
-      <br>
       <%= f.date_field :birth_date %>
     </div>
     <div class="field">
@@ -34,8 +35,8 @@
                       placeholder: 'Conte um pouco sobre sua vida com coleções, ou deixe em branco'
       %>
     </div>
-
-    <div class="actions">
-      <%= f.submit %>
+    <br/>
+    <div class="actions right">
+      <%= f.submit 'Confirmar' %>
     </div>
 <% end %>

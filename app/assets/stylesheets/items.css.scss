@@ -1,0 +1,25 @@
+div.item-display {
+  img {
+    display: block;
+  }
+  background: rgba(0, 0, 0, 0.70);
+  padding: 12px;
+  display: inline-block;
+  margin: 10px;
+  border-radius: 10px 10px 0px 0px;
+  color: white;
+  font-size: 20px;
+  hr {
+    margin: 5px 0px 5px 0px;
+    border-color: #b9b9b9;
+
+  }
+  p.item-description {
+    font-size: 16px;
+    height: 36px;
+    line-height: 20px;
+    width: 230px;
+    text-overflow: ellipsis;
+    overflow: auto;
+  }
+}

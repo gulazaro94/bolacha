@@ -1,7 +1,5 @@
 class UsefulController < ApplicationController
 
-  layout 'fullwidth', only: [:index]
-
   def index
   end
 

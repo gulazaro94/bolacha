@@ -1,7 +1,7 @@
 # config valid only for Capistrano 3.1
 lock '3.2.1'
 
-set :application, 'teste'
+set :application, 'colecoes'
 set :repo_url, 'git@github.com:gulazaro94/new_app.git'
 
 # Default deploy_to directory is /var/www/my_app
@@ -23,7 +23,7 @@ set :ssh_options, {:forward_agent => true}
 # set :pty, true
 
 # Default value for :linked_files is []
-set :linked_files, %w{config/database.yml config/secrets.yml}
+set :linked_files, %w{config/database.yml config/secrets.yml config/application.rb}
 
 # Default value for linked_dirs is []
 # set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}

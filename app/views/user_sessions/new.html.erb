@@ -1,9 +1,14 @@
-<%= form_for @session do |f| %>
+<div align="center">
 
-    <%= f.text_field :email %>
-    <br>
-    <%= f.password_field :password %>
+  <div style="display: inline-block; border-radius: 10px; padding: 30px 50px; background-color: rgba(0,0,0,0.5);">
+    <div class="title">Fazer Login</div>
     <br><br>
-    <%= f.submit 'Logar' %>
-
-<% end %>
+  <%= form_for @session do |f| %>
+      <%= f.text_field :email, placeholder: 'Email' %>
+      <br>
+      <%= f.password_field :password, placeholder: 'Senha' %>
+      <br><br>
+      <%= f.submit 'Logar' %>
+  <% end %>
+  </div>
+</div>

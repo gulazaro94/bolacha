@@ -1,11 +1,21 @@
-<div class="logo-title">Cerveja Coleções</div>
-
 <div class="menu">
-  <%= link_to 'Categorias', categories_path %>
-  <%= link_to 'Teste', categories_path %>
-  <% if logged? %>
-      <%= link_to logged.name, user_sessions_path, method: :delete %>
-  <% else %>
-      <%= link_to 'Log in', new_user_session_path %>
-  <% end %>
+  <ul class="menu-list">
+    <% if logged? %>
+        <% if logged.admin %>
+            <li>
+              <%= link_to 'Admin&#9660;'.html_safe, '#' %>
+              <ul class="sub-menu">
+                <li><%= link_to 'Categories', categories_path %></li>
+                <li><%= link_to 'Nova Bolacha', new_bolacha_path %></li>
+                <li><%= link_to 'Novo Rótulo', new_rotulo_path %></li>
+              </ul>
+            </li>
+        <% end %>
+        <li><%= link_to logged.name, user_sessions_path, method: :delete %></li>
+    <% else %>
+        <li><%= link_to 'Cadastre-se', new_user_path %></li>
+        <li><%= link_to 'Items', items_path %></li>
+        <li><%= link_to 'Log in', new_user_session_path %></li>
+    <% end %>
+  </ul>
 </div>

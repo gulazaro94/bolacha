@@ -17,12 +17,12 @@ class ApplicationController < ActionController::Base
 
   def require_no_authentication
     if logged?
-      redirect_to root_path, alert: 'Página incorreta' and return
+      redirect_to root_path, alert: 'Redirecionado, não pode estar logado!' and return
     end
   end
 
   def belongs_to(user)
-    unless logged == user.id
+    unless logged? && logged.id == user.id
       redirect_to root_path, alert: 'Esta página não lhe pertence!' and return
     end
   end

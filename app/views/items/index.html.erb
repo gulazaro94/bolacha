@@ -1,0 +1,25 @@
+<div class="title center">Items</div>
+
+<% @categories.each do |category| %>
+
+    <% if category.items.any? %>
+
+        <div class="title"><%= category.name %></div>
+        <hr>
+        <% category.items.each do |item| %>
+
+            <div class="item-display">
+              <%= item.id %>
+
+              <%= image_tag(item.picture_url(:thumb)) %>
+
+              <p class="item-description">
+                <%= item.description %>
+              </p>
+              <hr>
+            </div>
+        <% end %>
+    <% end %>
+<% end %>
+
+<div class="clear"></div>

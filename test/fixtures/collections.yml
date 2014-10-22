@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  item_id: 
+  user_id: 
+  repeated: false
+
+two:
+  item_id: 
+  user_id: 
+  repeated: false

@@ -1,0 +1,22 @@
+<%= form_for(@item) do |f| %>
+
+  <div class="field">
+    <%= image_tag(@item.picture_url, width: 300) if @item.picture? %>
+    <%= f.file_field :picture %>
+    <%= f.hidden_field :picture_cache %>
+  </div>
+
+  <div class="field">
+    <%= f.text_field :description, placeholder: 'Descrição' %>
+  </div>
+
+    <%= f.hidden_field :kind %>
+
+  <div class="field">
+    <%= f.collection_select :category_id, @categories, :id, :name, prompt: 'Selecione uma categoria' %>
+  </div>
+
+  <div class="actions right">
+    <%= f.submit 'Cadastrar' %>
+  </div>
+<% end %>

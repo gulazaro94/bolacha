@@ -16,7 +16,8 @@ class UserSessionsController < ApplicationController
     elsif val
       redirect_to logged, notice: 'Logado'
     else
-      redirect_to root_path, alert: 'Email e/ou senha incorreto(s)'
+      flash[:alert] = 'Email e/ou senha incorreto(s)'
+      render :new
     end
   end
 

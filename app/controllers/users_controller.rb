@@ -1,12 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
-  # GET /users
-  # GET /users.json
-  def index
-    @users = User.all
-  end
-
   # GET /users/1
   # GET /users/1.json
   def show
@@ -20,7 +14,6 @@ class UsersController < ApplicationController
 
   # GET /users/1/edit
   def edit
-    require_authentication
     belongs_to(@user)
   end
 
@@ -44,6 +37,7 @@ class UsersController < ApplicationController
   # PATCH/PUT /users/1
   # PATCH/PUT /users/1.json
   def update
+    belongs_to(@user)
     respond_to do |format|
       if @user.update(user_params)
         format.html { redirect_to @user, notice: 'User was successfully updated.' }
