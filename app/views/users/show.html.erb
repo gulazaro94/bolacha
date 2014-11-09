@@ -19,7 +19,7 @@
   <strong>Bio:</strong>
   <%= @user.bio %>
 </p>
-
+<%= render 'item_tabs' %>
 <% @user.items.group_by(&:category_id).each do |category, items| %>
 
     <div class="title"><%= Category.find(category).name %></div>
