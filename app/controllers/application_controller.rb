@@ -11,7 +11,10 @@ class ApplicationController < ActionController::Base
 
   def require_authentication
     unless logged?
-      redirect_to root_path, alert: 'Faça login para acessar esta página' and return
+      respond_to do |format|
+        format.html { redirect_to root_path, alert: 'Faça login para acessar esta página' and return }
+        format.js { render json: 'login-required' }
+      end
     end
   end
 

@@ -1,0 +1,13 @@
+<div class="item-display">
+  <%= item.id %>
+  <%= image_tag(item.picture_url(:thumb)) %>
+
+  <p class="item-description">
+    <%= item.description_str %>
+  </p>
+  <hr>
+  <p class="item-buttons">
+    <%= link_to 'Tenho', collections_path, remote: true, method: :post, class: 'right', id: 'have' %>
+    <%= link_to 'Tenho repetido', collections_path, data: {params: {item_id: item.id, repeated: true}}, remote: true, method: :post, id: 'have' %>
+  </p>
+</div>

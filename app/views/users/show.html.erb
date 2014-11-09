@@ -7,7 +7,7 @@
 
 <p>
   <strong>Picture:</strong>
-  <%= image_tag(@user.picture_url(:thumb)) %>
+  <%= image_tag(@user.picture_url, width: 200) %>
 </p>
 
 <p>
@@ -20,6 +20,13 @@
   <%= @user.bio %>
 </p>
 
+<% @user.items.group_by(&:category_id).each do |category, items| %>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+    <div class="title"><%= Category.find(category).name %></div>
+    <hr>
+    <% items.each do |item| %>
+
+        <%= render item %>
+
+    <% end %>
+<% end %>

@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  has_many :collections
+  has_many :items, through: :collections
 
   mount_uploader :picture, PictureUploader
 

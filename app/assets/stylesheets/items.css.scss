@@ -1,14 +1,15 @@
 div.item-display {
   img {
+    margin-top: 5px;
     display: block;
   }
   background: rgba(0, 0, 0, 0.70);
-  padding: 12px;
+  padding: 6px 12px;
   display: inline-block;
   margin: 10px;
   border-radius: 10px 10px 0px 0px;
   color: white;
-  font-size: 20px;
+  font-size: 25px;
   hr {
     margin: 5px 0px 5px 0px;
     border-color: #b9b9b9;
@@ -16,10 +17,23 @@ div.item-display {
   }
   p.item-description {
     font-size: 16px;
-    height: 36px;
+    height: 40px;
     line-height: 20px;
     width: 230px;
     text-overflow: ellipsis;
     overflow: auto;
+  }
+  p.item-buttons {
+    line-height: 20px;
+    padding: 5px;
+    a{
+      background-color: rgba(203, 198, 211, 0.20);
+      padding: 6px 10px;
+      color: #ffffff;
+      border-radius: 5px;
+      &:hover {
+        background-color: rgba(255, 255, 255, 0.50);
+      }
+    }
   }
 }

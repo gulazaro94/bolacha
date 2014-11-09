@@ -45,6 +45,7 @@ html, body {
   height: 70%;
   min-height: 100%;
   background-image: url("/images/desfocada5.jpg");
+  background-size: 100% auto;
   min-width: 600px;
 }
 
@@ -63,6 +64,12 @@ input, textarea, select {
   &:focus {
     @include shadow(#6b5c19, 0px, 0px, 15px);
   }
+}
+input[type=radio], input[type=radio] + label {
+  height: 20px;
+  width: 20px;
+  font-size: 23px;
+  vertical-align: top;
 }
 
 a, input[type=submit] {
@@ -93,11 +100,11 @@ div.logo-title {
   display: inline-block;
 }
 
-div.right {
+.right {
   float: right;
 }
 
-div.line {
+.line {
   display: inline-block;
 }
 

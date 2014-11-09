@@ -41,13 +41,24 @@ class ItemsController < ApplicationController
 
     respond_to do |format|
       if @item.save
+        add_to_collection
         format.html { redirect_to @item, notice: 'Item was successfully created.' }
-        format.json { render :show, status: :created, location: @item }
       else
         @categories = Category.all
         format.html { render :new }
         format.json { render json: @item.errors, status: :unprocessable_entity }
       end
+    end
+  end
+
+  def add_to_collection
+    quantity = params[:have].to_i
+    if quantity == 1
+      collection = Collection.new(user_id: logged.id, item_id: @item.id, repeated: false)
+      collection.save
+    elsif quantity == 2
+      collection = Collection.new(user_id: logged.id, item_id: @item.id, repeated: true)
+      collection.save
     end
   end
 

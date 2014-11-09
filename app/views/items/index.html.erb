@@ -8,16 +8,8 @@
         <hr>
         <% category.items.each do |item| %>
 
-            <div class="item-display">
-              <%= item.id %>
+            <%= render item %>
 
-              <%= image_tag(item.picture_url(:thumb)) %>
-
-              <p class="item-description">
-                <%= item.description %>
-              </p>
-              <hr>
-            </div>
         <% end %>
     <% end %>
 <% end %>

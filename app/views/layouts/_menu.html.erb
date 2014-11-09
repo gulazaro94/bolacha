@@ -4,18 +4,27 @@
     <% if logged? %>
         <% if logged.admin %>
             <li>
-              <%= link_to 'Admin&#9660;'.html_safe, '#' %>
+              <%= link_to 'Admin'.html_safe, '#' %>
               <ul class="sub-menu">
-                <li><%= link_to 'Categories', categories_path %></li>
+                <li><%= link_to 'Categorias', categories_path %></li>
                 <li><%= link_to 'Nova Bolacha', new_bolacha_path %></li>
                 <li><%= link_to 'Novo Rótulo', new_rotulo_path %></li>
               </ul>
             </li>
         <% end %>
-        <li><%= link_to logged.name, user_sessions_path, method: :delete %></li>
+        <li><%= link_to logged.name, logged %></li>
+        <li>
+          <%= link_to '#' do %>
+              <%= image_tag('/images/config-icon.png', width: 32, style: 'vertical-align: middle;') %>
+          <% end %>
+
+          <ul class="sub-menu">
+            <li><%= link_to 'Sair', user_sessions_path, method: :delete %></li>
+          </ul>
+        </li>
     <% else %>
         <li><%= link_to 'Cadastre-se', new_user_path %></li>
         <li><%= link_to 'Login', new_user_session_path %></li>
-  <% end %>
+    <% end %>
   </ul>
 </div>

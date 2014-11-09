@@ -4,9 +4,11 @@ Rails.application.routes.draw do
 
   get '/items/rotulo/new', to: 'items#new_rotulo', as: 'new_rotulo'
 
+  post '/collections/create', to: 'collections#create', as: 'collections'
+
   resources :items, except: [:new]
 
-  resources :categories
+  resources :categories, except: [:destroy]
 
   resources :users, except: [:index]
 

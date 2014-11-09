@@ -1,4 +1,5 @@
 @import "shadow";
+@import "linear-background";
 
 div.message {
   opacity: 0.75;
@@ -12,8 +13,8 @@ div.message {
   @include shadow(#171517, 0px, 5px, 10px);
 }
 div.notice {
-  background-image: linear-gradient(to bottom, #0c4f19, #118e2d);
+  @include linear-background(#0c4f19, #118e2d);
 }
 div.alert {
-  background-image: linear-gradient(to bottom, #460000, #730000);
+  @include linear-background(#460000, #730000);
 }
